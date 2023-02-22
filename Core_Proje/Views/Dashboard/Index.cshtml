@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard</title>
+</head>
+<body>
+    @*<div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card corona-gradient-card">
+                <div class="card-body py-0 px-0 px-sm-3">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-sm-3 col-xl-2">
+                            <img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
+                        </div>
+                        <div class="col-5 col-sm-7 col-xl-8 p-0">
+                            <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
+                            <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
+                        </div>
+                        <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
+                            <span>
+                                <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+    @await Component.InvokeAsync("FeatureStatistics")
+    <div class="row">
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Bütçe Geçmişi</h4>
+                    <canvas id="transaction-history" class="transaction-chart"></canvas>
+                    <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                        <div class="text-md-center text-xl-left">
+                            <h6 class="mb-1">Proje Ödemeleri</h6>
+                            <p class="text-muted mb-0">07 Haziran 2019, 09:12</p>
+                        </div>
+                        <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                            <h6 class="font-weight-bold mb-0">1000₺</h6>
+                        </div>
+                    </div>
+                    <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                        <div class="text-md-center text-xl-left">
+                            <h6 class="mb-1">Reklam Gelirleri</h6>
+                            <p class="text-muted mb-0">07 Mayıs 2019, 11:12</p>
+                        </div>
+                        <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                            <h6 class="font-weight-bold mb-0">12000₺</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @await Component.InvokeAsync("Last5Projects")
+
+    </div>
+    @await Component.InvokeAsync("StatisticDashboard2")
+
+    @await Component.InvokeAsync("ProjectList")
+    <div class="row">
+
+        @await Component.InvokeAsync("MessageList")
+        @await Component.InvokeAsync("SlideList")
+        @await Component.InvokeAsync("ToDoListPanel")
+    </div>
+    @await Component.InvokeAsync("VisitorMap")
+</body>
+</html>
+
