@@ -23,7 +23,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.v = values.Name + " " + values.Surname;
             //weather api
-            string api = "272df73faee537a4dc9635b6a5d0b5fe";
+            string api = "xxx";
             string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
             XDocument document = XDocument.Load(connection);
             ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
@@ -41,4 +41,4 @@ namespace Core_Proje.Areas.Writer.Controllers
     }
 }
 
-// https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=272df73faee537a4dc9635b6a5d0b5fe
+// https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=xxx
